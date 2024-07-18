@@ -1,0 +1,54 @@
+662  INFO  : [96m
+
+-------------------------------------------------------------------------------------
+     _______. _______ .______       _______ .__   __.  __  .___________.____    ____ 
+    /       ||   ____||   _  \     |   ____||  \ |  | |  | |           |\   \  /   / 
+   |   (----`|  |__   |  |_)  |    |  |__   |   \|  | |  | `---|  |----` \   \/   /  
+    \   \    |   __|  |      /     |   __|  |  . `  | |  |     |  |       \_    _/   
+.----)   |   |  |____ |  |\  \----.|  |____ |  |\   | |  |     |  |         |  |     
+|_______/    |_______|| _| `._____||_______||__| \__| |__|     |__|         |__|    
+                                                                                     
+ News and tutorials at https://serenity-bdd.info                                     
+ Documentation at https://serenity-bdd.github.io                                     
+ Test Automation Training and Coaching: https://www.serenity-dojo.com                
+ Commercial Support: https://www.serenity-dojo.com/serenity-bdd-enterprise-support   
+ Join the Serenity Community on Gitter: https://gitter.im/serenity-bdd/serenity-core 
+-------------------------------------------------------------------------------------
+[0m
+667  INFO  : Test Suite Started: Registro de cliente en demo qa
+724  INFO  : Test Suite Started: Registro de cliente en demo qa
+827  INFO  : 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Registro de cliente en demo qa(registro-de-cliente-en-demo-qa;registro-de-cliente-en-demo-qa)
+--------------------------------------------------------------------------------
+836  INFO  : [92m|-- 1: Registro de cliente en demo qa ({Nombre=Ronaldo, Apellido=Perez, Genero=Masculino, Celular=1234567890})[0m
+865  INFO  : [92m|---- Dado que Ronaldo ingresa a la pagina de demo qa[0m
+1145 INFO  : [92m|------ Ronaldo ingresa a la página https://demoqa.com/[0m
+1153 INFO  : [92m|-------- Ronaldo opens the browser at https://demoqa.com/[0m
+1218 INFO  n.s.c.w.d.ChromeDriverProvider: Starting Chrome driver instance with capabilities:
+1219 INFO  n.s.c.w.d.ChromeDriverProvider: Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--test-type, --no-sandbox, --ignore-certificate-errors, --window-size=1920,1080, --disable-infobars, --disable-gpu, --disable-default-apps, --disable-popup-blocking, --disable-extensions, --disable-notifications, --disable-print-preview, --test-type, --no-sandbox, --ignore-certificate-errors, --window-size=1920,1080, --disable-infobars, --disable-gpu, --disable-default-apps, --disable-popup-blocking, --disable-extensions, --disable-notifications, --disable-print-preview, chrome.switches=--incognito, --disable-popup-blocking, --start-maximized, --test-type, --window-size=1920,1080, --no-sandbox, --ignore-certificate-errors, \r\n                   --di..., --disable-default-apps, --disable-extensions-file-a..., \r\n                   --di..., --disable-gpu, --disable-web-security, --allow-running-insecure-co..., \r\n                   --re..., --disable-notifications, --incognito, --deny-permission-prompts, --disable-extension, \r\n                   --di...], extensions: []}}
+11406 INFO  : [92m|---- E ingresa al formulario de registro de estudiantes[0m
+11467 INFO  : [92m|------ Ronaldo ingresa al formulario de registro de estudiantes[0m
+11594 INFO  : [92m|-------- Ronaldo clicks on Botón de formulario[0m
+11862 INFO  : [92m|-------- Ronaldo clicks on Botón de formulario de práctica[0m
+12025 INFO  : [92m|---- Cuando ingresa sus datos obligatorio, Nombre "Ronaldo", Apellido "Perez", Genero "Masculino", Celular "1234567890"[0m
+12053 INFO  : [92m|------ Ronaldo ingresa sus datos obligatorio[0m
+12058 INFO  : [92m|-------- Ronaldo enters 'Ronaldo' into Campo de nombre[0m
+12379 INFO  : [92m|-------- Ronaldo enters 'Perez' into Campo de apellido[0m
+12567 INFO  : [92m|-------- Ronaldo clicks on Botón de género masculino[0m
+12680 INFO  : [92m|-------- Ronaldo enters '1234567890' into Campo de número de teléfono[0m
+12804 INFO  : [92m|---- Y da clic en el botón de enviar[0m
+12837 INFO  : [92m|------ Ronaldo clicks on [By.xpath: //button[@id='submit']][0m
+18207 INFO  : [92m|---- Entonces se debería validar que el registro fue exitoso[0m
+18465 INFO  : [92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Registro de cliente en demo qa
+----------------------------------------------------------------------[0m
