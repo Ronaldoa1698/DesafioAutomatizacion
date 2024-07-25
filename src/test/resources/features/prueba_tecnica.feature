@@ -1,19 +1,30 @@
 #language:es
-@Demoqa
-Característica: Registro de cliente en demo qa
-  Yo como Usuario
-  Quiero registrar mis datos la pagina de demo qa
-  Para validar su funcionalidad
+@DemoOrangeHRM
+Característica: Registro de cliente en OrangeHRM
+    Yo como Usuario
+    Quiero ingresar al sistema de OrangeHRM
+    Para crear un usuario
 
-  Regla: flujos happy path
+    Regla: flujos happy path
 
-    @RegistroCliente
-    Esquema del escenario: Registro de cliente en demo qa
-        Dado que Ronaldo ingresa a la pagina de demo qa
-        E ingresa al formulario de registro de estudiantes
-        Cuando ingresa sus datos obligatorio, Nombre "<Nombre>", Apellido "<Apellido>", Genero "<Genero>", Celular "<Celular>"
-        Y da clic en el botón de enviar
-        Entonces se debería validar que el registro fue exitoso
-      Ejemplos:
-        | Nombre  | Apellido | Genero    | Celular    |
-        | Ronaldo | Perez    | Masculino | 1234567890 |
+        @login
+        Esquema del escenario: Login en OrangeHRM
+            Dado que Username ingresa a la pagina de login de OrangeHRM
+            Cuando ingresa las credenciales,Usuario "<Usuario>", Contraseña "<Contraseña>"
+            Y da clic en el botón de login
+            Entonces debería ser redirigido al dashboard principal
+            Ejemplos:
+                |Usuario  | Contraseña |
+                | Admin    | admin123 |
+
+        @RegistroEmpleado
+        Esquema del escenario: Crear un nuevo empleado en OrangeHRM
+            Dado que el Administrador esta logueado en OrangeHRM
+            Y hace click en el boton de admin
+            Y hace click en agregar empleado
+            Cuando completa los datos obligatorios, Roles "<Roles>", Employee Name "<Employee Name>", Username "<Username>", Status "<Status>", Password "<Password>", Confirm Password "<Confirm Password>"
+            Y da clic en el boton de guardar
+            Entonces debería ser redirigido a la pagina de admin
+            Ejemplos:
+                | Roles  | Employee Name  | Username | Status  | Password      | Confirm Password |
+                | Admin  | Ranga  Akunuri | Ronaldo  | Enabled | 123456.Test   | 123456.Test      |

@@ -1,4 +1,4 @@
-662  INFO  : [96m
+808  INFO  : [96m
 
 -------------------------------------------------------------------------------------
      _______. _______ .______       _______ .__   __.  __  .___________.____    ____ 
@@ -15,40 +15,49 @@
  Join the Serenity Community on Gitter: https://gitter.im/serenity-bdd/serenity-core 
 -------------------------------------------------------------------------------------
 [0m
-667  INFO  : Test Suite Started: Registro de cliente en demo qa
-724  INFO  : Test Suite Started: Registro de cliente en demo qa
-827  INFO  : 
+815  INFO  : Test Suite Started: Registro de cliente en OrangeHRM
+893  INFO  : Test Suite Started: Registro de cliente en OrangeHRM
+1034 INFO  : 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
  |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Registro de cliente en demo qa(registro-de-cliente-en-demo-qa;registro-de-cliente-en-demo-qa)
+Crear un nuevo empleado en OrangeHRM(registro-de-cliente-en-orangehrm;crear-un-nuevo-empleado-en-orangehrm)
 --------------------------------------------------------------------------------
-836  INFO  : [92m|-- 1: Registro de cliente en demo qa ({Nombre=Ronaldo, Apellido=Perez, Genero=Masculino, Celular=1234567890})[0m
-865  INFO  : [92m|---- Dado que Ronaldo ingresa a la pagina de demo qa[0m
-1145 INFO  : [92m|------ Ronaldo ingresa a la página https://demoqa.com/[0m
-1153 INFO  : [92m|-------- Ronaldo opens the browser at https://demoqa.com/[0m
-1218 INFO  n.s.c.w.d.ChromeDriverProvider: Starting Chrome driver instance with capabilities:
-1219 INFO  n.s.c.w.d.ChromeDriverProvider: Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--test-type, --no-sandbox, --ignore-certificate-errors, --window-size=1920,1080, --disable-infobars, --disable-gpu, --disable-default-apps, --disable-popup-blocking, --disable-extensions, --disable-notifications, --disable-print-preview, --test-type, --no-sandbox, --ignore-certificate-errors, --window-size=1920,1080, --disable-infobars, --disable-gpu, --disable-default-apps, --disable-popup-blocking, --disable-extensions, --disable-notifications, --disable-print-preview, chrome.switches=--incognito, --disable-popup-blocking, --start-maximized, --test-type, --window-size=1920,1080, --no-sandbox, --ignore-certificate-errors, \r\n                   --di..., --disable-default-apps, --disable-extensions-file-a..., \r\n                   --di..., --disable-gpu, --disable-web-security, --allow-running-insecure-co..., \r\n                   --re..., --disable-notifications, --incognito, --deny-permission-prompts, --disable-extension, \r\n                   --di...], extensions: []}}
-11406 INFO  : [92m|---- E ingresa al formulario de registro de estudiantes[0m
-11467 INFO  : [92m|------ Ronaldo ingresa al formulario de registro de estudiantes[0m
-11594 INFO  : [92m|-------- Ronaldo clicks on Botón de formulario[0m
-11862 INFO  : [92m|-------- Ronaldo clicks on Botón de formulario de práctica[0m
-12025 INFO  : [92m|---- Cuando ingresa sus datos obligatorio, Nombre "Ronaldo", Apellido "Perez", Genero "Masculino", Celular "1234567890"[0m
-12053 INFO  : [92m|------ Ronaldo ingresa sus datos obligatorio[0m
-12058 INFO  : [92m|-------- Ronaldo enters 'Ronaldo' into Campo de nombre[0m
-12379 INFO  : [92m|-------- Ronaldo enters 'Perez' into Campo de apellido[0m
-12567 INFO  : [92m|-------- Ronaldo clicks on Botón de género masculino[0m
-12680 INFO  : [92m|-------- Ronaldo enters '1234567890' into Campo de número de teléfono[0m
-12804 INFO  : [92m|---- Y da clic en el botón de enviar[0m
-12837 INFO  : [92m|------ Ronaldo clicks on [By.xpath: //button[@id='submit']][0m
-18207 INFO  : [92m|---- Entonces se debería validar que el registro fue exitoso[0m
-18465 INFO  : [92m
+1049 INFO  : [92m|-- 1: Crear un nuevo empleado en OrangeHRM ({Roles=Admin, Employee Name=Ranga  Akunuri, Username=Ronaldo, Status=Enabled, Password=123456.Test, Confirm Password=123456.Test})[0m
+1155 INFO  : [92m|---- Dado que el Administrador esta logueado en OrangeHRM[0m
+1379 INFO  : [92m|------ Admin ingresa a la página https://opensource-demo.orangehrmlive.com/web/index.php/auth/login[0m
+1390 INFO  : [92m|-------- Admin opens the browser at https://opensource-demo.orangehrmlive.com/web/index.php/auth/login[0m
+1485 INFO  n.s.c.w.d.ChromeDriverProvider: Starting Chrome driver instance with capabilities:
+1487 INFO  n.s.c.w.d.ChromeDriverProvider: Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--test-type, --no-sandbox, --ignore-certificate-errors, --window-size=1920,1080, --disable-infobars, --disable-gpu, --disable-default-apps, --disable-popup-blocking, --disable-extensions, --disable-notifications, --disable-print-preview, --test-type, --no-sandbox, --ignore-certificate-errors, --window-size=1920,1080, --disable-infobars, --disable-gpu, --disable-default-apps, --disable-popup-blocking, --disable-extensions, --disable-notifications, --disable-print-preview, chrome.switches=--incognito, --disable-popup-blocking, --start-maximized, --test-type, --window-size=1920,1080, --no-sandbox, --ignore-certificate-errors, \r\n                   --di..., --disable-default-apps, --disable-extensions-file-a..., \r\n                   --di..., --disable-gpu, --disable-web-security, --allow-running-insecure-co..., \r\n                   --re..., --disable-notifications, --incognito, --deny-permission-prompts, --disable-extension, \r\n                   --di...], extensions: []}}
+6905 INFO  : [92m|------ Admin ingresa sus credenciales[0m
+6911 INFO  : [92m|-------- Admin enters 'Admin' into Campo de usuario[0m
+7380 INFO  : [92m|-------- Admin enters 'admin123' into Campo de contraseña[0m
+7531 INFO  : [92m|------ Admin da clic en el botón de login[0m
+7535 INFO  : [92m|-------- Admin clicks on Botón de login[0m
+8933 INFO  : [92m|---- Y hace click en el boton de admin[0m
+9367 INFO  : [92m|------ Admin clicks on Botón de Admin[0m
+11359 INFO  : [92m|---- Y hace click en agregar empleado[0m
+11809 INFO  : [92m|------ Admin clicks on Botón de agregar empleado[0m
+12672 INFO  : [92m|---- Cuando completa los datos obligatorios, Roles "Admin", Employee Name "Ranga  Akunuri", Username "Ronaldo", Status "Enabled", Password "123456.Test", Confirm Password "123456.Test"[0m
+12695 INFO  : [92m|------ Admin clicks on Selector de rol de usuario[0m
+13261 INFO  : [92m|------ Admin clicks on Opción de rol de usuario[0m
+13382 INFO  : [92m|------ Admin enters 'Ranga  Akunuri' into Campo de nombre del empleado[0m
+13571 INFO  : [92m|------ Admin clicks on Primera opción de nombre de empleado[0m
+13672 INFO  : [92m|------ Admin enters 'Ronaldo' into Campo de nombre de usuario[0m
+13776 INFO  : [92m|------ Admin clicks on Selector de estado[0m
+13946 INFO  : [92m|------ Admin clicks on Opción de estado[0m
+14060 INFO  : [92m|------ Admin enters '123456.Test' into Campo de contraseña[0m
+14156 INFO  : [92m|------ Admin enters '123456.Test' into Campo de confirmación de contraseña[0m
+14286 INFO  : [92m|---- Y da clic en el boton de guardar[0m
+14292 INFO  : [92m|------ Admin clicks on Botón de guardar[0m
+14426 INFO  : [92m|---- Entonces debería ser redirigido a la pagina de admin[0m
+14664 INFO  : [92m
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
  |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Registro de cliente en demo qa
+Crear un nuevo empleado en OrangeHRM
 ----------------------------------------------------------------------[0m
