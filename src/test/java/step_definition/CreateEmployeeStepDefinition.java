@@ -1,10 +1,11 @@
 package step_definition;
 
 import io.cucumber.java.es.*;
+import net.serenitybdd.rest.Ensure;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.nttdata.interfaces.CreateEmployeePage;
 import org.nttdata.tasks.fill_out.LoginUserForm;
@@ -29,59 +30,65 @@ public class CreateEmployeeStepDefinition {
         );
     }
 
-    @Y("hace click en el boton de admin")
-    public void haceClickEnElBotonDeAdmin() {
+    @Y("hace click en el boton de pim")
+    public void haceClickEnElBotonDePim() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(CreateEmployeePage.BUTTON_ADMIN, isVisible()).forNoMoreThan(30).seconds(),
-                Click.on(CreateEmployeePage.BUTTON_ADMIN)
+                WaitUntil.the(CreateEmployeePage.BUTTON_PIM, isVisible()).forNoMoreThan(30).seconds(),
+                Click.on(CreateEmployeePage.BUTTON_PIM)
         );
     }
 
     @Y("hace click en agregar empleado")
     public void haceClickEnAgregarEmpleado() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(CreateEmployeePage.BUTTON_ADD_EMPLOYEE, isVisible()).forNoMoreThan(30).seconds(),
-                Click.on(CreateEmployeePage.BUTTON_ADD_EMPLOYEE)
+                WaitUntil.the(CreateEmployeePage.BUTTON_ADD, isVisible()).forNoMoreThan(30).seconds(),
+                Click.on(CreateEmployeePage.BUTTON_ADD)
         );
     }
 
-    @Cuando("completa los datos obligatorios, Roles {string}, Employee Name {string}, Username {string}, Status {string}, Password {string}, Confirm Password {string}")
-    public void completaLosDatosObligatoriosRolesEmployeeNameUsernameStatusPasswordConfirmPassword(String roles, String employeeName, String username, String status, String password, String confirmPassword) {
+    @Cuando("completa los datos obligatorios, Nombre {string}, SegundoNombre {string}, Apellido {string}")
+    public void completaLosDatosObligatoriosNombreSegundoNombreApellido(String nombre, String segundoNombre, String apellido) {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(CreateEmployeePage.SELECT_USER_ROLE),
-                WaitUntil.the(CreateEmployeePage.SELECT_USER_ROLE_OPTION.of(roles), isVisible()).forNoMoreThan(30).seconds(),
-                Click.on(CreateEmployeePage.SELECT_USER_ROLE_OPTION.of(roles)),
-
-                Enter.theValue(employeeName).into(CreateEmployeePage.INPUT_EMPLOYEE_NAME),
-                WaitUntil.the(CreateEmployeePage.FIRST_EMPLOYEE_NAME_OPTION, isVisible()).forNoMoreThan(30).seconds(),
-                Click.on(CreateEmployeePage.FIRST_EMPLOYEE_NAME_OPTION),
-
-                Enter.theValue(username).into(CreateEmployeePage.INPUT_USERNAME),
-
-                Click.on(CreateEmployeePage.SELECT_STATUS),
-                WaitUntil.the(CreateEmployeePage.SELECT_STATUS_OPTION.of(status), isVisible()).forNoMoreThan(30).seconds(),
-                Click.on(CreateEmployeePage.SELECT_STATUS_OPTION.of(status)),
-
-                Enter.theValue(password).into(CreateEmployeePage.INPUT_PASSWORD),
-                Enter.theValue(confirmPassword).into(CreateEmployeePage.INPUT_CONFIRM_PASSWORD)
+                WaitUntil.the(CreateEmployeePage.INPUT_FIRST_NAME, isVisible()).forNoMoreThan(30).seconds(),
+                Enter.theValue(nombre).into(CreateEmployeePage.INPUT_FIRST_NAME),
+                WaitUntil.the(CreateEmployeePage.INPUT_MIDDLE_NAME, isVisible()).forNoMoreThan(30).seconds(),
+                Enter.theValue(segundoNombre).into(CreateEmployeePage.INPUT_MIDDLE_NAME),
+                WaitUntil.the(CreateEmployeePage.INPUT_LAST_NAME, isVisible()).forNoMoreThan(30).seconds(),
+                Enter.theValue(apellido).into(CreateEmployeePage.INPUT_LAST_NAME)
         );
     }
 
     @Y("da clic en el boton de guardar")
     public void daClicEnElBotonDeGuardar() {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(CreateEmployeePage.BUTTON_SAVE)
+                Click.on(CreateEmployeePage.BUTTON_SAVE),
+                WaitUntil.the(CreateEmployeePage.EMPLOYEE_DETAILS_HEADER, WebElementStateMatchers.isVisible()).forNoMoreThan(30).seconds()
         );
     }
 
-
-    @Entonces("debería ser redirigido a la pagina de admin")
-    public void deberíaSerRedirigidoALaPaginaDeAdmin() {
+    @Y("da clic en el boton Employee List")
+    public void daClicEnElBotonEmployeeList() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(CreateEmployeePage.ADMIN_PAGE_HEADER, isVisible()).forNoMoreThan(30).seconds()
+                WaitUntil.the(CreateEmployeePage.NAV_BAR_EMPLOYEE_LIST, isVisible()).forNoMoreThan(30).seconds(),
+                Click.on(CreateEmployeePage.NAV_BAR_EMPLOYEE_LIST)
         );
+    }
 
-        BrowseTheWeb.as(theActorInTheSpotlight()).evaluateJavascript("window.scrollBy(0, 250);");
+    @Y("busca el empleado creado por el nombre {string}")
+    public void buscaElEmpleadoCreadoPorElNombre(String arg0) {
+        theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(CreateEmployeePage.NAV_BAR_EMPLOYEE_LIST, isVisible()).forNoMoreThan(30).seconds(),
+                Enter.theValue(arg0).into(CreateEmployeePage.INPUT_EMPLOYEE_NAME),
+                WaitUntil.the(CreateEmployeePage.BUTTON_SEARCH, isVisible()).forNoMoreThan(30).seconds(),
+                Click.on(CreateEmployeePage.BUTTON_SEARCH)
+        );
+    }
 
+    @Entonces("debemos verificar que el Empleado {string} con segundo nombre {string} fue creado exitosamente")
+    public void debemosVerificarQueElEmpleadoConSegundoNombreFueCreadoExitosamente(String firstName, String middleName) {
+        String fullName = firstName + " " + middleName;
+        theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(CreateEmployeePage.EMPLOYEE_NAME_IN_RESULTS.of(fullName), isVisible()).forNoMoreThan(30).seconds()
+        );
     }
 }
